@@ -1,0 +1,13 @@
+<div class="container-element box box-blue">
+    <h3>Container {{item.id}}</h3>
+        <ul dnd-list="item.childNodes" class="dnd-ul">
+            <li ng-repeat="child in item.childNodes"
+                dnd-draggable="item"
+                dnd-effect-allowed="move"
+                dnd-moved="item.childNodes.splice($index, 1)"
+                ng-class="{selected: models.selected === child}"
+                ng-include="child.type + '.html'">
+            </li>
+        </ul>
+    </ul>
+</div>
